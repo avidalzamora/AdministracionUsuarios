@@ -10,6 +10,6 @@
 namespace SOLEER.UI.Pages {
     
     
-    public partial class CrearSolicitud {
+    public partial class AtenderSolicitudes {
     }
 }

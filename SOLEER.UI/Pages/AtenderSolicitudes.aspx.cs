@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SOLEER.UI.Pages
 {
-    public partial class CrearSolicitud : System.Web.UI.Page
+    public partial class AtenderSolicitudes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
