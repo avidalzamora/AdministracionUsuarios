@@ -974,6 +974,7 @@
     <Content Include="Pages\AccesoDenegado.aspx" />
     <Content Include="Pages\AdministracionUsuarios.aspx" />
     <Content Include="Pages\AdministracionCatalogos.aspx" />
+    <Content Include="Pages\CrearSolicitud.aspx" />
     <Content Include="Pages\Inicio.aspx" />
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
@@ -7723,6 +7724,13 @@
     </Compile>
     <Compile Include="Pages\AdministracionCatalogos.aspx.designer.cs">
       <DependentUpon>AdministracionCatalogos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrearSolicitud.aspx.cs">
+      <DependentUpon>CrearSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrearSolicitud.aspx.designer.cs">
+      <DependentUpon>CrearSolicitud.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
