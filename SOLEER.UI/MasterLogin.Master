@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterLogin.Master.cs" Inherits="SOLEER.UI.MasterLogin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%: Page.Title %> - SOLEER© Soluciones Estratégicas El Real</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Gota de Aceite.ico" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <link href="Content/css/style.css" rel="stylesheet" />
+    <link href="Content/css/style-responsive.css" rel="stylesheet" />
+    <link href="Content/css/usstyle.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css" />
+
+    <asp:PlaceHolder runat="server">
+        <%--: Scripts.Render("~/bundles/modernizr")--%> 
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+</head>
+<body class="login-body">
+    <form runat="server" class="form-signin">
+        <div class="form-signin-heading text-center">
+            <!--<img src="~/Content/img/login-logo.png" alt=""/>-->
+        </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- Placed js at the end of the document so the pages load faster -->
+        <script src="../Content/Js/jquery-1.10.2.min.js"></script>
+        <script src="../Content/Js/bootstrap.min.js"></script>
+        <script src="../Content/Js/modernizr.min.js"></script>
+    </form>
+</body>
+</html>

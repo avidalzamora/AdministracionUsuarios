@@ -1,0 +1,344 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="SOLEER.UI.Principal" %>
+
+<%@ Register Assembly="DevExpress.Web.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%: Page.Title %> - SOLEER© Soluciones Estratégicas El Real</title>
+    <link href="~/Gota de Aceite.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css" />
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css" />
+    <link rel="stylesheet" href="bower_components/morris.js/morris.css" />
+    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
+    <link href="Content/css/fontGoogle.css" rel="stylesheet" />
+    <link href="Content/css/usstyle.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager runat="server">
+        </asp:ScriptManager>
+        <!-- Site wrapper -->
+        <div class="wrapper">
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <header class="main-header">
+                        <a href="#" class="logo">
+                            <span class="logo-mini">
+                                <img src="../Content/img/Gota de Aceite.ico" class="img-head" alt="REAL" />
+                            </span>
+                            <span class="logo-lg">
+                                <%--<img src="Content/img/Gota de Aceite.ico" class="img-head" alt="REAL" />--%>
+                                <b>SOLEER© </b>El Real
+                            </span>
+                        </a>
+                        <nav class="navbar navbar-static-top">
+                            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                                <span class="sr-only">Toggle navigation</span>
+                            </a>
+
+                            <div class="navbar-custom-menu">
+                                <ul class="nav navbar-nav">
+                                    <%-- <li class="dropdown tasks-menu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-flag-o"></i>
+                                            <span class="label label-danger">9</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="header">You have 9 tasks</li>
+                                            <li>
+                                                <ul class="menu">
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Design some buttons<small class="pull-right">20%</small></h3>
+                                                            <div class="progress xs">
+                                                                <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                    <span class="sr-only">20% Complete</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="footer">
+                                                <a href="#">View all tasks</a>
+                                            </li>
+                                        </ul>
+                                    </li>--%>
+                                    <li class="dropdown user user-menu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <!-- User Account: style can be found in dropdown.less -->
+                                            <img src="../Content/img/staff_profile.png" class="user-image" alt="Imagen Usuario" />
+                                            <span class="hidden-xs">
+                                                <asp:Label ID="lbUS" runat="server" Text=""></asp:Label></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="user-header">
+                                                <img src="../Content/img/staff_profile.png" class="img-circle" alt="Imagen Usuario" />
+                                                <p>
+                                                    <asp:Label ID="lbNombreUS" runat="server" Text=""></asp:Label>
+                                                    <small>
+                                                        <asp:Label ID="lbCodUs" runat="server" Text=""></asp:Label></small>
+                                                </p>
+                                            </li>
+                                            <li class="user-footer">
+                                                <%--<div class="pull-left">
+                                                    <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default btn-flat" runat="server">Ver Perfil</asp:LinkButton>
+                                                </div>--%>
+                                                <div class="pull-right">
+                                                    <asp:LinkButton ID="LinkButton1" CssClass="btn btn-default btn-flat" OnClick="LinkButton1_Click" runat="server">Cerrar Sesión</asp:LinkButton>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                   <%-- <li>
+                                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                                        <!-- Control Sidebar Toggle Button -->
+                                    </li>--%>
+                                </ul>
+                            </div>
+                        </nav>
+                    </header>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <aside class="main-sidebar">
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <ul class="sidebar-menu" data-widget="tree">
+                        <li class="header"><b>MENU NAVEGACIÓN</b></li>
+                        <li runat="server" id="mnGrupo0" class="active treeview">
+                            <a href="#">
+                                <i class="fa fa-balance-scale"></i><span>Cadena de Suministros</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="mnGrupo0Sub0" runat="server" class="active treeview">
+                                    <a href="#"><i class="fa fa-wrench"></i>Mantenimiento
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li runat="server" id="mnGrupo0Sub0Item0" class="active">
+                                            <asp:LinkButton ID="LinkButon1" runat="server"><i class="fa fa-rss-square"></i> Proveedores</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo0Sub0Item1">
+                                            <asp:LinkButton ID="LinkButon2" runat="server"><i class="fa fa-odnoklassniki"></i> Tipo Clientes</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo0Sub0Item2">
+                                            <asp:LinkButton ID="LinkButon3" runat="server"><i class="fa fa-area-chart"></i> Fuerza Ventas</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo0Sub0Item3">
+                                            <asp:LinkButton ID="LinkButon4" runat="server"><i class="fa fa-phone"></i> Tipo Llamada</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo0Sub0Item4">
+                                            <asp:LinkButton ID="LinkButton11" runat="server"><i class="fa fa-phone-square"></i> Clasificación Llamada</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo0Sub0Item5">
+                                            <asp:LinkButton ID="LinkButton12" runat="server"><i class="fa fa-sort-amount-asc"></i> Clasificación Incidente</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo0Sub0Item6">
+                                            <asp:LinkButton ID="LinkButton13" runat="server"><i class="fa fa-users"></i> Asigna Usuarios x Linea</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo0Sub0Item7">
+                                            <asp:LinkButton ID="LinkButton14" runat="server"><i class="fa fa-user-times"></i> Reasigna Usuarios x Linea</asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                                <li runat="server" id="mnGrupo0Sub1Item0">
+                                    <asp:LinkButton ID="LinkButton15" runat="server"><i class="fa fa-exclamation-triangle"></i> Incidentes</asp:LinkButton></li>
+                            </ul>
+                        </li>
+                        <li runat="server" id="mnGrupo1" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-truck"></i><span>Servicio al Cliente</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="mnGrupo1Sub0" runat="server" class="treeview">
+                                    <a href="#"><i class="fa fa-cubes"></i>WMS
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li runat="server" id="mnGrupo1Sub0Item0">
+                                            <asp:LinkButton ID="LinkButon5" runat="server"><i class="fa fa-building"></i> Bodega Usuario</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo1Sub0Item1">
+                                            <asp:LinkButton ID="LinkButon6" runat="server"><i class="fa fa-user"></i> Clasificación x Usuario</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo1Sub0Item2">
+                                            <asp:LinkButton ID="LinkButon7" runat="server"><i class="fa fa-map-o"></i> Ubicaciones Especiales</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo1Sub0Item3">
+                                            <asp:LinkButton ID="LinkButon8" runat="server"><i class="fa fa-map-marker"></i> Consultar Ubicaciones</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo1Sub0Item4">
+                                            <asp:LinkButton ID="LinkButton16" runat="server"><i class="fa fa-hand-lizard-o"></i> Reubicación Artículos</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo1Sub0Item5">
+                                            <asp:LinkButton ID="LinkButton17" runat="server"><i class="fa fa-plus-square"></i> Asignación Tareas</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo1Sub0Item6">
+                                            <asp:LinkButton ID="LinkButton18" runat="server"><i class="fa fa-map"></i> Mapa Ubicaciones</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo1Sub0Item7">
+                                            <asp:LinkButton ID="LinkButton19" runat="server"><i class="fa fa-check-square-o"></i> Estatus Cuadros</asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                                <li runat="server" id="mnGrupo1Sub1Item0">
+                                    <asp:LinkButton ID="LinkButton20" runat="server"><i class="fa fa-subscript"></i> Conteo Fisico</asp:LinkButton></li>
+                                <li id="mnGrupo1Sub2" runat="server" class="treeview">
+                                    <a href="#"><i class="fa fa-circle-o-notch"></i>Procesos de Operación
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li runat="server" id="mnGrupo1Sub2Item0">
+                                            <asp:LinkButton ID="LinkButton21" runat="server"><i class="fa fa-upload"></i> Importar Clientes</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo1Sub2Item1">
+                                            <asp:LinkButton ID="LinkButton22" runat="server"><i class="fa fa-edit"></i> Depurar Articulos</asp:LinkButton></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li runat="server" id="mnGrupo2" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-money"></i><span>Finanzas</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="mnGrupo2Sub0" runat="server" class="treeview">
+                                    <a href="#"><i class="fa fa-wrench"></i>Tesoreria
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li runat="server" id="mnGrupo2Sub0Item0">
+                                            <asp:LinkButton ID="LinkButon9" runat="server"><i class="fa fa-circle-o"></i> Dashboard G20</asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li runat="server" id="mnGrupo3" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-suitcase"></i><span>Administración</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="mnGrupo3Sub0" runat="server" class="treeview">
+                                    <a href="#"><i class="fa fa-wrench"></i>Mantenimiento
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li runat="server" id="mnGrupo3Sub0Item0">
+                                            <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/Pages/AdministracionUsuarios.aspx"><i class="fa fa-users"></i> Usuarios</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo3Sub0Item1">
+                                            <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Pages/AdministracionCatalogos.aspx"><i class="fa fa-list-alt"></i> Catalogos</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo3Sub0Item2">
+                                            <asp:LinkButton ID="LinkButton5" runat="server"><i class="fa fa-th-large"></i> Modulos Aplicativos</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo3Sub0Item3">
+                                            <asp:LinkButton ID="LinkButton6" runat="server"><i class="fa fa-qrcode"></i> Opciones Modulos</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo3Sub0Item4">
+                                            <asp:LinkButton ID="LinkButton23" runat="server"><i class="fa fa-bell-o"></i> Configurar Notificadores</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo3Sub0Item5">
+                                            <asp:LinkButton ID="LinkButton24" runat="server"><i class="fa fa-sort-numeric-asc"></i> Numero Siguiente</asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                                <li id="mnGrupo3Sub1" runat="server" class="treeview">
+                                    <a href="#"><i class="fa fa-cog"></i>Configuración Central
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li runat="server" id="mnGrupo3Sub1Item0">
+                                            <asp:LinkButton ID="LinkButton25" runat="server"><i class="fa fa-shopping-cart"></i> Productos</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo3Sub1Item1">
+                                            <asp:LinkButton ID="LinkButton26" runat="server"><i class="fa fa-list-alt"></i> Definiciones</asp:LinkButton></li>
+                                        <li runat="server" id="mnGrupo3Sub1Item2">
+                                            <asp:LinkButton ID="LinkButton27" runat="server"><i class="fa fa-cogs"></i> Configuración</asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li runat="server" id="mnGrupo4" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-support"></i><span>Ayuda</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li runat="server" id="mnGrupo4Sub0Item0">
+                                    <asp:LinkButton ID="LinkButton7" runat="server"><i class="fa fa-circle-o"></i> Dashboard G20</asp:LinkButton></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <div class="content-wrapper">
+                <!-- Content Wrapper. Contains page content -->
+
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <!-- /.content-wrapper -->
+            </div>
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 0.0.1
+                </div>
+                <strong>Copyright &copy; 2018-2025 <a href="http://www.elreal.com.ni/" target="_blank">Aceitera El Real S.A.</a>.</strong> Todos los derechos Reservados.
+            </footer>
+
+            <aside class="control-sidebar control-sidebar-dark">
+                <div class="tab-content">
+                    <div class="tab-pane" id="control-sidebar-home-tab"></div>
+                </div>
+            </aside>
+        </div>
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <script>
+            $.widget.bridge('uibutton', $.ui.button);
+        </script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../bower_components/raphael/raphael.min.js"></script>
+        <script src="../bower_components/morris.js/morris.min.js"></script>
+        <script src="../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+        <script src="../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="../bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+        <script src="../bower_components/moment/min/moment.min.js"></script>
+        <script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+        <script src="../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../dist/js/adminlte.min.js"></script>
+        <script src="../dist/js/pages/dashboard.js"></script>
+        <script src="../dist/js/demo.js"></script>
+    </form>
+</body>
+</html>

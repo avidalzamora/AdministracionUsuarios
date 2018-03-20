@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLEER.UI", "SOLEER.UI\SOLEER.UI.csproj", "{72221065-3F0B-4803-B88C-D0A01D56E369}"
+	ProjectSection(ProjectDependencies) = postProject
+		{005C9C30-4A1B-44A8-B465-82177A5BA879} = {005C9C30-4A1B-44A8-B465-82177A5BA879}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLEER.Data", "SOLEER.Data\SOLEER.Data.csproj", "{005C9C30-4A1B-44A8-B465-82177A5BA879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLEER.Code", "SOLEER.Code\SOLEER.Code.csproj", "{D659AB5E-D34C-4F8B-95DA-D6C8F11F3244}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72221065-3F0B-4803-B88C-D0A01D56E369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72221065-3F0B-4803-B88C-D0A01D56E369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72221065-3F0B-4803-B88C-D0A01D56E369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72221065-3F0B-4803-B88C-D0A01D56E369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005C9C30-4A1B-44A8-B465-82177A5BA879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005C9C30-4A1B-44A8-B465-82177A5BA879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005C9C30-4A1B-44A8-B465-82177A5BA879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005C9C30-4A1B-44A8-B465-82177A5BA879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D659AB5E-D34C-4F8B-95DA-D6C8F11F3244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D659AB5E-D34C-4F8B-95DA-D6C8F11F3244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D659AB5E-D34C-4F8B-95DA-D6C8F11F3244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D659AB5E-D34C-4F8B-95DA-D6C8F11F3244}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
